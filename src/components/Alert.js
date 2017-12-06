@@ -1,30 +1,24 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import Badge from './Badge'
+import Badge from './Badge';
 
-class Alert extends Component {
-    static propTypes = {
-        classAlert: PropTypes.string.isRequired,
-        message: PropTypes.string.isRequired,
-        messageBadge: PropTypes.any,
-    }
-
-    render() {
-        const { message, messageBadge, classAlert } = this.props;
-
-        return (
-            <div className="row">
-                <div className="col-lg-12 mt-3">
-                    <div className={classAlert} role="alert">
-                        <h3 className="text-center font-weight-bold">
-                            {message} {typeof messageBadge !== typeof undefined && <Badge message={messageBadge}/>}
-                        </h3>
-                    </div>
-                </div>
+const Alert = (props) => (
+    <div className="row">
+        <div className="col-lg-12 mt-3">
+            <div className={props.classAlert} role="alert">
+                <h3 className="text-center font-weight-bold">
+                    {props.message} {typeof props.messageBadge !== typeof undefined && <Badge message={props.messageBadge}/>}
+                </h3>
             </div>
-        )
-    }
+        </div>
+    </div>
+);
+
+Alert.propTypes = {
+    classAlert: PropTypes.string.isRequired,
+    message: PropTypes.string.isRequired,
+    messageBadge: PropTypes.any
 }
 
-export default Alert
+export default Alert;

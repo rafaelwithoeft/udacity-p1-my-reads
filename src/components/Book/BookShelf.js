@@ -45,7 +45,6 @@ class BookShelf extends Component {
             this.setState((prevState) => ({
                 booksOnShelf: this.changeShelf(prevState.booksOnShelf, book, shelf)
             }));
-
         });
     }
 

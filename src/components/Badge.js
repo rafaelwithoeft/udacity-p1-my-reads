@@ -1,18 +1,12 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class Badge extends Component {
-    static propTypes = {
-        message: PropTypes.any.isRequired
-    }
+const Badge = (props) => (
+    <span className="badge badge-primary">{props.message}</span>
+);
 
-    render() {
-        const { message } = this.props;
-        
-        return (
-            <span className="badge badge-primary">{message}</span>
-        )
-    }
+Badge.propTypes = {
+    message: PropTypes.any.isRequired
 }
 
-export default Badge
+export default Badge;
